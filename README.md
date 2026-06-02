@@ -32,22 +32,23 @@ using GPT models for ATS Resume Evaluation.
 
 ### 🛠️ Tech Stack
 
-Python
-OpenAI
-Streamlit
-Plotly
-Loguru
-PDFPlumber
-Docx2Txt
+- Python  
+- OpenAI  
+- Streamlit  
+- Plotly  
+- Loguru  
+- PDFPlumber  
+- Docx2Txt  
 
 ---
 
 ### ▶️ Run
 
+```
 pip install -r requirements.txt
 
 streamlit run app.py
-
+```
 ---
 
 ### 🧑🏻‍💻 Author
