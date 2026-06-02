@@ -1,0 +1,13 @@
+.env
+
+__pycache__/
+*.pyc
+
+logs/*.log
+
+.vscode/
+
+.streamlit/
+
+data/resumes/*
+data/job_descriptions/*
