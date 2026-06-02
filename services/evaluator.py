@@ -4,22 +4,25 @@ def evaluate_resume(
         prompt_template,
         resume_text,
         jd_text,
-        system_prompt
+        system_prompt,
+        model_name,
+        temperature
 ):
-
     user_prompt = f"""
-    Job Description:
+Job Description:
 
-    {jd_text}
+{jd_text}
 
-    Resume:
+Resume:
 
-    {resume_text}
+{resume_text}
 
-    {prompt_template}
-    """
+{prompt_template}
+"""
 
     return ask_llm(
-        system_prompt,
-        user_prompt
+        system_prompt=system_prompt,
+        user_prompt=user_prompt,
+        model_name=model_name,
+        temperature=temperature
     )

@@ -1,17 +1,39 @@
 ZERO_SHOT_PROMPT_NAME = "Zero Shot"
 
 ZERO_SHOT_PROMPT = """
-Evaluate the fit between the provided Job Description and Resume.
+Evaluate the match between the Resume and Job Description.
 
-Return:
+You must act as an ATS system.
 
-1. Extracted Skills from Job Description
-2. Extracted Skills from Resume
-3. Matched Skills
-4. Missing Skills
-5. ATS Match Percentage
-6. Fit Verdict
-7. Improvement Suggestions
+---
 
-Provide the output in a professional ATS report format.
+## RULES
+- Do NOT use examples
+- Do NOT assume missing information
+- Be strict and objective
+- Extract only what is explicitly present
+
+---
+
+## OUTPUT FORMAT (STRICT JSON ONLY)
+
+Return ONLY valid JSON:
+
+{
+  "matched_skills": [],
+  "missing_skills": [],
+  "match_percentage": 0,
+  "verdict": "",
+  "score_breakdown": {
+    "required_skills": 0,
+    "preferred_skills": 0,
+    "soft_skills": 0
+  },
+  "suggestions": [],
+  "analysis": ""
+}
+
+---
+
+Now evaluate the given Resume and Job Description.
 """

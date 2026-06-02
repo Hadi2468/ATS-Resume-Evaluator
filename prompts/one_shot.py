@@ -1,22 +1,43 @@
 ONE_SHOT_PROMPT_NAME = "One Shot"
 
 ONE_SHOT_PROMPT = """
-Evaluate the fit between a job description and a resume based on the following criteria. Here are some examples:
+Evaluate the match between Resume and Job Description using ATS logic.
 
-**Example 1:**
-Job Description: Requires skills in Python, Java, and teamwork.
-Resume: Skills include Python, Java, communication.
+You are given ONE example to guide formatting.
+
+---
+
+## EXAMPLE
+
+Job Description:
+Requires Python, Java, teamwork.
+
+Resume:
+Python, Java, communication.
+
 Output:
-- Extracted Skills from Job Description: Python, Java, and teamwork
-- Extracted Skills from Resume: Python, Java, and communication
-- Matched Skills: Python, Java
-- Missing Skills: teamwork
-- Score Breakdown: Python (3 points), Java (3 points), teamwork (0 points)
-- Final Match Percentage: 66.67%
-- Fit Verdict: Moderate Fit
-- Section-wise Suggestions: Improve teamwork skills
-- Table Format:
-  - Keyword Type (Hard/Soft Skill, list down of all the possible skills mentioned in the resume and Job Description)
+{
+  "matched_skills": ["Python", "Java"],
+  "missing_skills": ["teamwork"],
+  "match_percentage": 66,
+  "verdict": "Moderate Fit",
+  "score_breakdown": {
+    "required_skills": 6,
+    "preferred_skills": 0,
+    "soft_skills": 0
+  },
+  "suggestions": ["Improve teamwork skills"],
+  "analysis": "Partial match of core technical skills."
+}
 
-Now, evaluate the following: Job Description and Resume
+---
+
+## RULES
+- Follow the format exactly
+- Do NOT add extra text
+- Output ONLY JSON
+
+---
+
+Now evaluate the given Resume and Job Description.
 """
