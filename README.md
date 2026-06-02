@@ -3,17 +3,16 @@ Prompt engineering for resume evaluator using ATS system, considering, zero-shot
 
 ---
 
-Compare:
+### Compare:
 
-✅ Zero-Shot Prompting
-
-✅ One-Shot Prompting
-
-✅ Few-Shot Prompting
-
-✅ Chain of Thought Prompting
+☑️ Zero-Shot Prompting  
+☑️ One-Shot Prompting  
+☑️ Few-Shot Prompting  
+☑️ Chain of Thought Prompting  
 
 using GPT models for ATS Resume Evaluation.
+
+![Output Dashboard View](assets/dashboard.png) 
 
 ---
 
